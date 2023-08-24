@@ -1,0 +1,61 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	background: rgb(255, 243, 229);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 243, 229, 1) 0%,
+		rgba(255, 220, 192, 0.5886729691876751) 50%,
+		rgba(255, 202, 172, 0.8435749299719888) 100%
+	);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.board {
+	background: rgb(255, 160, 152);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 160, 152, 1) 0%,
+		rgba(255, 222, 205, 0.7511379551820728) 35%,
+		rgba(255, 192, 192, 1) 100%
+	);
+	height: 600px;
+	width: 500px;
+	border-radius: 10px;
+	box-shadow: -10px 10px 20px -10px rgba(0, 0, 0, 0.75);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+#contentBoard {
+	height: 450px;
+	width: 450px;
+	margin-bottom: 20px;
+	background-color: #ffeded;
+	border-radius: 8px;
+	display: grid;
+	grid-template-columns: repeat(16, auto);
+	grid-template-rows: repeat(16, auto);
+}
+
+footer {
+	margin-bottom: 0;
+	margin-top: 20px;
+}
+
+#contentBoard > div {
+	border: 0.1px dotted #ff8282;
+	border-radius: 8px;
+}
+
+.hover {
+	background-color: #ff8282;
+}
