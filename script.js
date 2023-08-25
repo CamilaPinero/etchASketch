@@ -5,29 +5,36 @@ let squareSize = size * size;
 for (let i = 0; i < squareSize; i++) {
 	let pixel = document.createElement("div");
 	pixel.classList.add("pixel");
-
 	contentBoard.appendChild(pixel);
 }
 
 const pixels = document.querySelectorAll(".pixel");
-pixels.forEach((pixel) =>
+
+function hoverChange(pixel) {
 	pixel.addEventListener("mouseover", (event) => {
-		event.target.classList.add("hover");
-	})
-);
+		event.target.style = `background-color: #${Math.floor(
+			Math.random() * 16999000
+		).toString(16)}`;
+	});
+}
 
-document.getElementById("resize").addEventListener("click", resize);
+pixels.forEach((pixel) => hoverChange(pixel));
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
 
-function resize() {
-	size = parseInt(prompt("choose size"));
+slider.oninput = function () {
+	output.innerHTML = this.value;
+	resize(this.value);
+};
+
+function resize(size) {
 	squareSize = size * size;
 	contentBoard.replaceChildren("");
 	for (let i = 0; i < squareSize; i++) {
 		let pixel = document.createElement("div");
 		pixel.classList.add("pixel");
-		pixel.addEventListener("mouseover", (event) => {
-			event.target.classList.add("hover");
-		});
+		hoverChange(pixel);
 		contentBoard.appendChild(pixel);
 	}
 	contentBoard.setAttribute(
