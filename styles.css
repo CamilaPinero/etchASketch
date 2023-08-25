@@ -22,12 +22,7 @@ body {
 
 .board {
 	background: rgb(255, 160, 152);
-	background: linear-gradient(
-		90deg,
-		rgba(255, 160, 152, 1) 0%,
-		rgba(255, 222, 205, 0.7511379551820728) 35%,
-		rgba(255, 192, 192, 1) 100%
-	);
+
 	height: fit-content;
 	width: fit fit-content;
 	border-radius: 10px;
@@ -50,7 +45,6 @@ body {
 #contentBoard {
 	height: 450px;
 	width: 450px;
-
 	background-color: #ffeded;
 	border-radius: 8px;
 	display: grid;
@@ -68,39 +62,53 @@ footer {
 }
 
 .slidecontainer {
-	width: 100%; /* Width of the outside container */
+	width: 100%;
 }
 
 .slider {
-	-webkit-appearance: none; /* Override default CSS styles */
 	appearance: none;
-	width: 50%; /* Full-width */
-	height: 10px; /* Specified height */
-	background: #fff9f9; /* Grey background */
-	outline: none; /* Remove outline */
-	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-	-webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+	-webkit-appearance: none;
+	width: 50%;
+	height: 10px;
+	background: #fff9f9;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: 0.2s;
 	transition: opacity 0.2s;
 	border-radius: 50px;
 }
 
 .slider:hover {
-	opacity: 1; /* Fully shown on mouse-over */
+	opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
-	-webkit-appearance: none; /* Override default look */
+	-webkit-appearance: none;
 	appearance: none;
-	width: 20px; /* Set a specific slider handle width */
+	width: 20px;
 	height: 20px;
-	border-radius: 50px; /* Slider handle height */
-	background: #b65353; /* Green background */
-	cursor: pointer; /* Cursor on hover */
+	border-radius: 50px;
+	background: #f7d199;
+	border-width: 1px;
+	cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-	width: 25px; /* Set a specific slider handle width */
-	height: 25px; /* Slider handle height */
-	background: #e67272; /* Green background */
-	cursor: pointer; /* Cursor on hover */
+	width: 25px;
+	height: 25px;
+
+	cursor: pointer;
+}
+
+button {
+	background-color: #f7d199;
+	border-width: 0;
+	border-radius: 8px;
+	border-style: inset;
+	border-image: unset;
+	margin-top: 10px;
+	padding: 6px 10px;
+}
+button:hover {
+	background-color: #f8c373;
 }
