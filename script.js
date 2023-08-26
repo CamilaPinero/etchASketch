@@ -31,8 +31,14 @@ function hoverChangeGrayscale(pixel) {
 	eraser.addEventListener("click", () => (opacity = 0.1));
 }
 
-/* grayscale.addEventListener("click", () => (mode = "grayscale")); // como hago para que funcioneeeeee
-colors.addEventListener("click", () => (mode = "colors")); */
+grayscale.addEventListener("click", () => {
+	mode = "grayscale";
+	resetPixels();
+});
+colors.addEventListener("click", () => {
+	mode = "colors";
+	resetPixels();
+});
 
 function hoverChange(pixel) {
 	if (mode === "colors") {
@@ -53,8 +59,7 @@ slider.oninput = function () {
 	resize(this.value);
 };
 
-function resize(size) {
-	squareSize = size * size;
+function resetPixels() {
 	contentBoard.replaceChildren("");
 	for (let i = 0; i < squareSize; i++) {
 		let pixel = document.createElement("div");
@@ -62,6 +67,11 @@ function resize(size) {
 		hoverChange(pixel);
 		contentBoard.appendChild(pixel);
 	}
+}
+
+function resize(size) {
+	squareSize = size * size;
+	resetPixels();
 	contentBoard.setAttribute(
 		"style",
 		`grid-template-columns: repeat(${size}, auto); grid-template-rows: repeat(${size}, auto)`
